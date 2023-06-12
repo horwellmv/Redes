@@ -1,0 +1,52 @@
+Notas
+
+PASSWORD SWITCH EN CLI
+
+enable
+configure terminal
+line console 0
+login local
+exit
+username grupo5 password grupo5
+exit
+write
+
+-----------------------
+PASSWORD ROUTER EN CLI
+
+enable
+configure terminal
+enable password grupo5
+exit
+exit
+---
+Para entrar una vez tenga password
+enable
+ingresaLaPassword
+etc...
+
+
+----------------------
+CREAR VLan EN SWITCH
+
+configure termina
+vlan 2 				(2,3,4...etc: es el numero de vlan que estoy haciendo, la 1 ya viene ocupada por defecto)
+name VLan_Servidores 		(nombre que le quiera dar a la vlan)
+interface range f0/10-15 	(Numeros de los puertos que haran parte de la vlan)
+switchport access vlan 2 	(numero de la vlan que tendra el rango dado en el comando anterior)
+exit
+
+show vlan 			(Muestra las vlan creadas y sus rangos)
+
+--------------------------
+SWITCH CONECTION MODO TRUNK A OTRO SWITCH
+
+enable
+confugure terminal
+interface f0/# 			(# es el numero de puerto donde conecté los dos swiths entre si)
+switchport mode trunk
+exit				(repetir en el otro switch con el numero de puerto del trunk)
+
+
+
+
